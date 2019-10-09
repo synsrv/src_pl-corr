@@ -1,6 +1,6 @@
 
 pl_alpha = 1.5
-xmin = 1
+pl_xmin = 1.
 
 Nsteps = 100
 Npool = 100
