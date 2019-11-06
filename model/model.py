@@ -90,8 +90,8 @@ def run_model(tr):
         act_prcs[ids,2] = -10
         act_prcs[ids,2] = np.random.choice(np.setdiff1d(pid_pool,
                                                         act_prcs[:,2]),
-                                          replace=False,
-                                          size=np.sum(ids))
+                                           replace=False,
+                                           size=np.sum(ids))
 
         # new lifetimes
         new_lts = powerlaw_distribution(np.sum(ids), tr.pl_alpha,
@@ -105,7 +105,7 @@ def run_model(tr):
         
     # -1 for end of simulation "synapse didn't die"
     for prcs in act_prcs:
-        lts_out.append([1, prcs[1], j, j-prcs[3], -1, -10, prcs[2]])
+        lts_out.append([1, prcs[1], j+prcs[0], (j+prcs[0])-prcs[3], -1, -10, prcs[2]])
 
     raw_dir = './data/%.4d' %(tr.v_idx)
     
