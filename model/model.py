@@ -120,6 +120,9 @@ def run_model(tr):
         pickle.dump(lts_out,pfile)
 
         
+    from code.analysis.post_process.equal_dt import (
+        subsamp_equal_dt )
+    subsamp_equal_dt(namespace, lts_out, raw_dir)
 
         
 
